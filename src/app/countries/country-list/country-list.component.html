@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="input-group w-25 my-4">
+    <input type="text" class="form-control" [(ngModel)]="searchText" (keydown.enter)="findCountries()" placeholder="Search for a country">
+    <div class="input-group-append">
+      <button class="btn btn-primary input-group-text" (click)="findCountries()">Go!</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="card col-sm-3 col-lg-2 m-4" *ngFor="let country of countries">
+    <img class="card-img-top mt-3" [src]="country.flag">
+    <div class="card-body">
+      <h5 class="card-title">{{country.name}} ({{country.alpha2Code}}</h5>
+      <p class="card-text">{{country.region}}</p>
+      <a href="https://www.wikipedia.com/wiki/{{country.name}}" target="_blank" class="card-link">Wikipedia</a>
+    </div>
+  </div>
+</div>

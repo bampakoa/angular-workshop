@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CountryListComponent } from '../country-list/country-list.component';
+import { CountryListComponent } from './country-list/country-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { CountryListComponent } from '../country-list/country-list.component';
     CountryListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [CountryListComponent]
 })

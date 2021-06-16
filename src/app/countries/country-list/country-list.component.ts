@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CountriesService } from '../countries/countries.service';
-import { Country } from '../countries/country';
+import { CountriesService } from '../countries.service';
+import { Country } from '../country';
 
 @Component({
   selector: 'app-country-list',
@@ -9,11 +9,16 @@ import { Country } from '../countries/country';
 })
 export class CountryListComponent implements OnInit {
   countries: Country[] = [];
+  searchText = '';
 
   constructor(private countriesService: CountriesService) { }
 
   ngOnInit(): void {
     this.getCountries();
+  }
+
+  findCountries() {
+    this.countriesService.search(this.searchText).subscribe(countries => this.countries = countries);
   }
 
   private getCountries() {

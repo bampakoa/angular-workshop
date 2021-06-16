@@ -17,4 +17,8 @@ export class CountriesService {
   getEuro(): Observable<Country[]> {
     return this.http.get<Country[]>(this.countriesUrl + '/regionalbloc/eu');
   }
+
+  search(term: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.countriesUrl}/name/${term}`);
+  }
 }
