@@ -1,4 +1,4 @@
-# Angular SHA Workshop
+# Angular Workshop
 
 ## Setup
 
