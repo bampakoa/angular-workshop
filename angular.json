@@ -51,7 +51,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/angular-workshop/"
             },
             "development": {
               "buildOptimizer": false,
