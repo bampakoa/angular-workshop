@@ -8,17 +8,14 @@ import { Country } from './country';
   providedIn: 'root'
 })
 export class CountriesService {
-  private countriesUrl: string;
 
-  constructor(private http: HttpClient) {
-    this.countriesUrl = environment.apiUrl;
-  }
+  constructor(private http: HttpClient) {}
 
   getEuro(): Observable<Country[]> {
-    return this.http.get<Country[]>(this.countriesUrl + '/regionalbloc/eu');
+    return this.http.get<Country[]>(environment.apiUrl + '/regionalbloc/eu');
   }
 
   search(term: string): Observable<Country[]> {
-    return this.http.get<Country[]>(`${this.countriesUrl}/name/${term}`);
+    return this.http.get<Country[]>(`${environment.apiUrl}/name/${term}`);
   }
 }
