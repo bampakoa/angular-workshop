@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://restcountries.eu/rest/v2'
+  apiUrl: 'https://restcountries.com/v2'
 };
